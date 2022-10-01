@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 import styles from '../styles/Home.module.css'
@@ -7,7 +8,7 @@ import Stack from '../components/Stack'
 import Row from '../components/Row'
 import Column from '../components/Column'
 import Text from '../components/Text'
-import Img from '../components/Img'
+// import Img from '../components/Img'
 import Button from '../components/Button'
 
 
@@ -23,11 +24,14 @@ export default function Home() {
 
       <main className="bg-white_A700 font-telex 2xl:h-[1025px] 3xl:h-[1230px] lg:h-[797px] xl:h-[911px] mx-[auto] lg:pl-[17px] xl:pl-[19px] 2xl:pl-[22px] 3xl:pl-[26px] w-[100%] max-h-screen">
       <Stack className="bg-white_A700 font-telex 2xl:h-[1025px] 3xl:h-[1230px] lg:h-[797px] xl:h-[911px] mx-[auto] lg:pl-[17px] xl:pl-[19px] 2xl:pl-[22px] 3xl:pl-[26px] w-[100%] max-h-screen">
-        <Img
-          src="images/img_image8.png"
-          className="absolute lg:h-[100px] mt-8 xl:h-[114px] 2xl:h-[129px] 3xl:h-[154px] left-[7%] rounded-radius50 top-[0] xl:w-[113px] 2xl:w-[128px] 3xl:w-[153px] lg:w-[99px]"
-          alt="imageEight"
-        />
+       
+       <Stack className="absolute lg:h-[100px] mt-8 xl:h-[114px] 2xl:h-[129px] 3xl:h-[154px] left-[7%] rounded-radius50 top-[0] xl:w-[113px] 2xl:w-[128px] 3xl:w-[153px] lg:w-[99px]">
+        <Image
+          src={'/images/img_image8.png'}
+          width={128}
+          height={128}
+          alt={"imageEight"}/>
+          </Stack>
         <Stack className="absolute bottom-[0] 3xl:h-[1133px] lg:h-[734px] xl:h-[839px] 2xl:h-[944px] right-[0] w-[92%]">
           <Stack className="absolute 3xl:h-[1133px] lg:h-[734px] xl:h-[839px] 2xl:h-[944px] left-[0] w-[100%]">
             <Stack className="absolute font-opensans 3xl:h-[1133px] lg:h-[734px] xl:h-[839px] 2xl:h-[944px] left-[0] w-[100%]">
@@ -42,11 +46,16 @@ export default function Home() {
                 <div className="absolute bg-blue_800 bottom-[5%] lg:h-[147px] xl:h-[169px] 2xl:h-[190px] 3xl:h-[227px] right-[14%] rounded-radius965 w-[15%]"></div>
                 <div className="absolute bg-cyan_A400 lg:h-[219px] xl:h-[250px] 2xl:h-[282px] 3xl:h-[338px] right-[6%] rounded-radius143 top-[13%] w-[22%]"></div>
                 <Stack className="absolute font-telex 3xl:h-[1098px] lg:h-[711px] xl:h-[814px] 2xl:h-[915px] right-[0] w-[73%]">
-                  <Img
-                    src="images/img_rectangle3.png"
-                    className="absolute 3xl:h-[1046px] lg:h-[678px] xl:h-[775px] 2xl:h-[872px] rounded-radius28 top-[0] w-[100%]"
-                    alt="RectangleThree"
-                  />
+
+                  <Stack className={"absolute 3xl:h-[1046px] lg:h-[678px] xl:h-[775px] 2xl:h-[872px] rounded-radius28 top-[0] w-[100%]"}>
+                  <Image
+                    src={'/images/img_rectangle3.png'}
+                    width={625}
+                    height={872}
+                    // className={"absolute 3xl:h-[1046px] lg:h-[678px] xl:h-[775px] 2xl:h-[872px] rounded-radius28 top-[0] w-[100%]"}
+                    alt={"RectangleThree"}/>
+                    </Stack>
+
                   <Text className="absolute bottom-[5%] font-normal left-[4%] not-italic lg:text-[17px] xl:text-[19px] 2xl:text-[22px] 3xl:text-[26px] text-black_900 w-[auto]">
                     © 2022 Lighthouse. All rights reserved.
                   </Text>
@@ -58,8 +67,7 @@ export default function Home() {
               </Stack>
               <Column
                 className="absolute bg-cover bg-repeat lg:p-[122px] xl:p-[139px] 2xl:p-[157px] 3xl:p-[188px] right-[0] top-[0] w-[55%]"
-                style={{ backgroundImage: "url('images/img_group24.png')" }}
-              >
+                style={{ backgroundImage: "url('images/img_group24.png')" }}>
                 <div className="bg-white_A700 lg:h-[16px] xl:h-[18px] 2xl:h-[21px] 3xl:h-[25px] 2xl:mb-[100px] 3xl:mb-[120px] lg:mb-[77px] xl:mb-[88px] 3xl:mt-[105px] lg:mt-[68px] xl:mt-[78px] 2xl:mt-[88px] rounded-radius50 lg:w-[15px] xl:w-[17px] 2xl:w-[20px] 3xl:w-[24px]"></div>
               </Column>
             </Stack>
@@ -71,18 +79,20 @@ export default function Home() {
               shape="RoundedBorder24"
               size="xl"
               variant="OutlineBlue800"
-              onClick={() => router.push('/signup')}
-            >
+              onClick={() => router.push('/signup')}>
               Get Started
             </Button>
 
+            <Stack className="absolute lg:h-[382px] xl:h-[436px] 2xl:h-[491px], 3xl:h-[589px] right-[1%] top-[19%] w-[52%]">
+            <Image
+              src={'/images/undraw.svg'}
+              width={969}
+              height={600}
+              // className="absolute lg:h-[382px] xl:h-[436px] 2xl:h-[491px], 3xl:h-[589px] right-[1%] top-[19%] w-[52%]"
+              alt={"Illustration"}
+              style={{ backgroundImage: "url('images/illustrationbg.png')"}}/>
+              </Stack>
 
-            <Img
-              src="images\undraw_questions_re_1fy7.svg"
-              className="absolute lg:h-[382px] xl:h-[436px] 2xl:h-[491px] 3xl:h-[589px] right-[1%] top-[19%] w-[52%]"
-              alt="Illustration"
-              style={{ backgroundImage: "url('images/illustrationbg.png')", position: 'absolute', height: '600px'}}
-            />
           </Stack>
           <Text className="absolute text-justify font-bold font-opensans 2xl:text-[100px] 3xl:text-[120px] lg:text-[77px] xl:text-[88px] text-black_900 top-[24%] 3xl:tracking-ls11 lg:tracking-ls7 xl:tracking-ls8 2xl:tracking-ls9 w-[auto]">
             Light house
@@ -97,8 +107,7 @@ export default function Home() {
             className="font-normal border border-solid border-[#015EBF] rounded-3xl not-italic lg:text-[17px] xl:text-[19px] 2xl:text-[22px] 3xl:text-[26px] text-blue_800 text-center w-[50%]"
             shape="RoundedBorder15"
             variant="OutlineBlue8001_2"
-            onClick={() => router.push('/signup')}
-          >
+            onClick={() => router.push('/signup')}>
             Sign up
           </Button>
 
@@ -106,8 +115,7 @@ export default function Home() {
             className="font-normal bg-[#DD086C] text-[#ffffff] 2xl:ml-[10px] 3xl:ml-[12px] lg:ml-[7px] xl:ml-[8px] not-italic lg:text-[17px] xl:text-[19px] 2xl:text-[22px] 3xl:text-[26px] text-center text-white_A700 w-[47%] rounded-3xl"
             shape="RoundedBorder15"
             variant="OutlineBlue8001_2"
-            onClick={() => router.push('/login')}
-          >
+            onClick={() => router.push('/login')}>
             Log in
           </Button>
 

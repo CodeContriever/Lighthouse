@@ -6,7 +6,6 @@ import { useRouter } from 'next/router'
 import Row from '../components/Row'
 import Column from '../components/Column'
 import Text from '../components/Text'
-import Img from '../components/Img'
 import Button from '../components/Button'
 import Stack from '../components/Stack'
 
@@ -56,8 +55,7 @@ export default function Join() {
               shape="RoundedBorder24"
               size="lg"
               variant="OutlineBlue800"
-              onClick={() => router.push('/quiz')}
-            >
+              onClick={() => router.push('/quiz')}>
               Join
             </Button>
             </FormControl>
@@ -67,13 +65,16 @@ export default function Join() {
 
         <Column
           className="flex flex-col items-center justify-around bg-cover bg-repeat items-center lg:ml-[49px] xl:ml-[56px] 2xl:ml-[64px] 3xl:ml-[76px] 2xl:p-[107px] 3xl:p-[128px] lg:p-[83px] xl:p-[95px] rounded-lg w-[40%] h-[850px] max-h-screen"
-          style={{ backgroundImage: "url('images/img_group3.png')" }}
-        >
-          <Img
-            src="images/img_image8.png"
-            className="lg:h-[151px] xl:h-[173px] 2xl:h-[195px] 3xl:h-[233px] lg:mt-[13px] xl:mt-[15px] 2xl:mt-[17px] 3xl:mt-[20px] lg:w-[150px] xl:w-[172px] 2xl:w-[194px] 3xl:w-[232px]"
-            alt="imageEight"
-          />
+          style={{ backgroundImage: "url('images/img_group3.png')" }}>
+
+            <Stack className="lg:h-[151px] xl:h-[173px] 2xl:h-[195px] 3xl:h-[233px] lg:mt-[13px] xl:mt-[15px] 2xl:mt-[17px] 3xl:mt-[20px] lg:w-[150px] xl:w-[172px] 2xl:w-[194px] 3xl:w-[232px]">
+          <Image
+            src={"/images/img_image8.png"}
+            width={128}
+            height={128}
+            alt={"imageEight"}/>
+            </Stack>
+
           <Text className="font-normal mt:[50px] lg:leading-[24px] xl:leading-[28px] 2xl:leading-[32px] 3xl:leading-[38px] lg:mt-[248px] xl:mt-[283px] 2xl:mt-[319px] 3xl:mt-[383px] not-italic lg:text-[18px] xl:text-[21px] 2xl:text-[24px] 3xl:text-[28px] text-center text-gray_900 w-[78%]">
             “Almost all creativity involves purposeful play.” <br />– Abraham
             Maslow
@@ -85,8 +86,7 @@ export default function Join() {
               shape="RoundedBorder24"
               size="lg"
               variant="OutlineBlue800"
-              onClick={() => router.push('/login')}
-            >
+              onClick={() => router.push('/login')}>
               Log in
             </Button>
 
@@ -95,8 +95,7 @@ export default function Join() {
               shape="RoundedBorder24"
               size="lg"
               variant="OutlineBlue800"
-              onClick={() => router.push('/signup')}
-            >
+              onClick={() => router.push('/signup')}>
               Sign up
             </Button>
             </Stack>

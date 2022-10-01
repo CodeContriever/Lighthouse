@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
 import Head from 'next/head'
-// import Image from 'next/image'
+import Image from 'next/image'
 
 import Row from '../components/Row'
 import Column from '../components/Column'
 import Text from '../components/Text'
 import Button from '../components/Button'
-import Img from '../components/Img'
 import Stack from '../components/Stack'
 import Grid from '../components/Grid'
 
@@ -24,11 +23,15 @@ export default function Quiz() {
       <main className=" bg-white_A700 font-opensans 2xl:h-[200px] 3xl:h-[1230px] lg:h-[200px] xl:h-[200px] mx-[auto] w-[100%] max-h-screen">
       <Stack className="flex bg-white_A700 font-opensans 2xl:h-[200px] 3xl:h-[1230px] lg:h-[200px] xl:h-[200px] mx-[auto] w-[100%]">
         <Stack className="absolute lg:h-[144px] xl:h-[164px] 2xl:h-[185px] 3xl:h-[221px] left-[6%] top-[0] w-[35%]">
-          <Img
-            src="images/img_rectangle1910.png"
-            className="absolute lg:h-[144px] xl:h-[164px] 2xl:h-[185px] 3xl:h-[221px] left-[2%] rounded-radius50 w-[98%]"
-            alt="Rectangle1910"
-          />
+
+          <Stack className="absolute lg:h-[144px] xl:h-[164px] 2xl:h-[185px] 3xl:h-[221px] left-[2%] rounded-radius50 w-[98%]">
+          <Image
+            src={"/images/img_rectangle1910.png"}
+            height={185}
+            width={587}
+            alt={"Rectangle1910"}/>
+            </Stack>
+
           <Row className="flex items-center justify-around absolute bg-gray_200 bottom-[30%] justify-center left-[0] lg:p-[10px] xl:p-[12px] 2xl:p-[14px] 3xl:p-[16px] rounded-radius8 w-[39%]">
             <Text className="font-normal lg:ml-[27px] xl:ml-[31px] 2xl:ml-[35px] 3xl:ml-[42px] my-[2px] not-italic lg:text-[18px] xl:text-[21px] 2xl:text-[24px] 3xl:text-[28px] text-gray_900 w-[auto]">
               Points
@@ -42,16 +45,23 @@ export default function Quiz() {
           <Stack className="absolute 3xl:h-[1184px] lg:h-[767px] xl:h-[878px] 2xl:h-[987px] w-[100%]">
             <Stack className="absolute bottom-[1%] 3xl:h-[1170px] lg:h-[758px] xl:h-[867px] 2xl:h-[975px] w-[100%]">
               <Row className="flex flex-row absolute justify-between w-[100%]">
-                <Img
-                  src="images/img_rectangle1912.png"
-                  className="lg:h-[600px] xl:h-[686px] 2xl:h-[772px] 3xl:h-[926px] lg:mt-[157px] xl:mt-[179px] 2xl:mt-[202px] 3xl:mt-[242px] rounded-radius50 w-[35%]"
-                  alt="Rectangle1912"
-                />
-                <Img
-                  src="images/img_rectangle1913.png"
-                  className="lg:h-[238px] xl:h-[273px] 2xl:h-[307px] 3xl:h-[368px] rounded-radius50 w-[17%]"
-                  alt="Rectangle1913"
-                />
+
+                <Stack className="lg:h-[600px] xl:h-[686px] 2xl:h-[772px] 3xl:h-[926px] lg:mt-[157px] xl:mt-[179px] 2xl:mt-[202px] 3xl:mt-[242px] rounded-radius50 w-[35%]">
+                <Image
+                  src={"/images/img_rectangle1912.png"}
+                  width={587}
+                  height={722}
+                  alt={"Rectangle1912"}/>
+                  </Stack>
+
+                <Stack className="lg:h-[238px] xl:h-[273px] 2xl:h-[307px] 3xl:h-[368px] rounded-radius50 w-[17%]">
+                <Image
+                  src={"/images/img_rectangle1913.png"}
+                  width={587}
+                  height={307}
+                  alt={"Rectangle1913"}/>
+                </Stack>
+                  
               </Row>
               <Column className="absolute right-[6%] top-[7%] w-[73%]">
                 <Row className="flex items-center justify-end ml-[auto] w-[70%]">
@@ -66,36 +76,20 @@ export default function Quiz() {
                   <Button
                     className="2xl:ml-[322px] 3xl:ml-[386px] flex items-center justify-center lg:ml-[250px] text-center w-[26%] xl:ml-[286px]"
                     leftIcon={
-                      <Img
-                        src="images/img_settings.svg"
-                        className="text-center lg:w-[14px] lg:mr-[9px] xl:w-[16px] xl:mr-[10px] 2xl:w-[19px] 2xl:mr-[12px] 3xl:w-[22px] 3xl:mr-[14px]"
-                        alt="settings"
-                      />
+                      <Stack className="text-center lg:w-[14px] lg:mr-[9px] xl:w-[16px] xl:mr-[10px] 2xl:w-[19px] 2xl:mr-[12px] 3xl:w-[22px] 3xl:mr-[14px]">
+                      <Image
+                        src={"/images/img_settings.svg"}
+                        width={14}
+                        height={14}
+                        alt={"settings"}/>
+                        </Stack>
                     }
-                    variant="FillGray200"
-                  >
+                    variant="FillGray200">
                     <div className="bg-transparent font-normal not-italic lg:text-[18px] xl:text-[21px] 2xl:text-[24px] 3xl:text-[28px]">
                       Settings
                     </div>
                   </Button>
                 </Row>
-                {/* <Stack className=" flex items-center justify-center lg:h-[114px] xl:h-[130px] 2xl:h-[147px] 3xl:h-[176px] lg:ml-[274px] xl:ml-[314px] 2xl:ml-[353px] 3xl:ml-[423px] lg:mt-[23px] xl:mt-[26px] 2xl:mt-[30px] 3xl:mt-[36px] w-[13%]">
-                  <Stack className="flex items-center justify-center absolute lg:h-[114px] xl:h-[130px] 2xl:h-[147px] 3xl:h-[176px] w-[100%]">
-                    <Img
-                      src="images/img_vector.svg"
-                      className="absolute bottom-[1%] lg:h-[114px] xl:h-[130px] 2xl:h-[147px] 3xl:h-[176px] left-[1%] w-[100%]"
-                      alt="Vector"
-                    />
-                    <Img
-                      src="images/img_vector_pink_600.svg"
-                      className="absolute lg:h-[114px] xl:h-[130px] 2xl:h-[147px] 3xl:h-[176px] left-[0] w-[50%]"
-                      alt="Vector One"
-                    />
-                  </Stack>
-                  <Text className="flex absolute font-bold h-[max-content] inset-[0] justify-center m-[auto] lg:text-[37px] xl:text-[42px] 2xl:text-[48px] 3xl:text-[57px] text-gray_900 w-[max-content]">
-                    60
-                  </Text>
-                </Stack> */}
                 <Stack className="flex flex-col items-center justify-center">
                 <Text className="text-center font-semibold mx-[auto] lg:ml-[31px] xl:ml-[36px] 2xl:ml-[41px] 3xl:ml-[49px] 3xl:mt-[104px] lg:mt-[67px] xl:mt-[77px] 2xl:mt-[87px] lg:text-[37px] xl:text-[42px] 2xl:text-[48px] 3xl:text-[57px] text-blue_800 w-[auto]">
                   Who is the King of Kings of Isreal
@@ -136,49 +130,42 @@ export default function Quiz() {
                 </Grid>
                 </Stack>
               </Column>
-
             </Stack>
-            <Img
-              src="images/img_rectangle1914.png"
-              className="absolute bottom-[0] lg:h-[591px] xl:h-[676px] 2xl:h-[760px] 3xl:h-[912px] right-[0] rounded-radius50 w-[30%]"
-              alt="Rectangle1914"
-            />
+
+            <Stack className="absolute bottom-[0] lg:h-[591px] xl:h-[676px] 2xl:h-[760px] 3xl:h-[912px] right-[0] rounded-radius50 w-[30%]">
+            <Image
+              src={"/images/img_rectangle1914.png"}
+              width={587}
+              height={760}
+              alt={"Rectangle1914"}/>
+              </Stack>
           </Stack>
+
           <Column className="flex absolute bottom-[1%] inset-x-[0] items-center mx-[auto] w-[88%]">
             
-            <footer className="flex items-center justify-center font-poppins lg:mt-[20px] xl:mt-[20px] 2xl:mt-[20px] 3xl:mt-[98px] w-[100%]">
+            <footer className="flex items-center justify-center font-poppins lg:mt-[5px] xl:mt-[5px] 2xl:mt-[5px] 3xl:mt-[5px] w-[100%]">
             
-              <Row className="flex items-center justify-between w-[100%] mt-[50px]">
+              <Row className="flex items-center justify-between w-[100%] mt-[5px]">
                 <Button
                   className="flex items-center justify-center text-center w-[15%]"
                   leftIcon={
-                    <Img
-                      src="images/img_polygon_2.svg"
-                      className="text-center lg:w-[18px] lg:h-[19px] lg:mr-[3px] xl:w-[21px] xl:h-[22px] xl:mr-[4px] 2xl:w-[24px] 2xl:h-[25px] 2xl:mr-[5px] 3xl:w-[28px] 3xl:h-[29px] 3xl:mr-[6px]"
-                      alt="Polygon 2"
-                    />
+                    <Stack className="text-center lg:w-[18px] lg:h-[19px] lg:mr-[3px] xl:w-[21px] xl:h-[22px] xl:mr-[4px] 2xl:w-[24px] 2xl:h-[25px] 2xl:mr-[5px] 3xl:w-[28px] 3xl:h-[29px] 3xl:mr-[6px]">
+                    <Image
+                      src={"/images/img_polygon_2.svg"}
+                      width={21}
+                      height={22}
+                      alt={"Polygon 2"}/>
+                      </Stack>
                   }
-                  variant="OutlineBluegray100"
-                >
+                  variant="OutlineBluegray100">
                   <div className="bg-transparent font-medium lg:text-[18px] xl:text-[21px] 2xl:text-[24px] 3xl:text-[28px]">
                     Previous
                   </div>
                 </Button>
-                
-                {/* <Row className="flex items-center justify-center rounded-radius16 w-[32%]">
-              <Box sx={{ flexGrow: 1 }} className='flex items-center justify-center mx-[auto]'>
-              <BorderLinearProgress variant="determinate" value={50} className="lg:h-[25px] xl:h-[29px] 2xl:h-[33px] 3xl:h-[39px] mb-[1px] rounded-radius16 w-[81%]" />
-              <Text className="font-normal lg:ml-[26px] xl:ml-[30px] 2xl:ml-[34px] 3xl:ml-[40px] mt-[1px] not-italic lg:text-[24px] xl:text-[28px] 2xl:text-[32px] 3xl:text-[38px] text-gray_601 w-[auto]">
-                {" "}
-                1/5
-              </Text>
-             </Box>
-            </Row> */}
 
                 <Button
                   className="font-medium lg:text-[18px] xl:text-[21px] 2xl:text-[24px] 3xl:text-[28px] text-center w-[15%]"
-                  variant="OutlineBluegray1001_2"
-                >
+                  variant="OutlineBluegray1001_2">
                   Next
                 </Button>
               </Row>
